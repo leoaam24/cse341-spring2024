@@ -1,16 +1,24 @@
 const express = require('express')
 const app = express()
 const lesson1Route = require('./controllers/lesson1');
+const opendb = require('./database/connect');
+const port =  process.env.PORT || 3000;
+
 
 app.get('/', lesson1Route.leoRoute);
 
-app.get('/Alfred', lesson1Route.alfredRoute);
+app.get('/alfred', lesson1Route.alfredRoute);
 
-const port =  3000;
+opendb.initDb((err) => {
+    if(err) {
+        console.log(err)
+    }
+    else {
+        app.listen(port, () => {console.log(`Database is listening and node Running on port ${port}`)});
+    }
+});
+
+
 
 //ROUTES
-app.use('/', require('./route'));
-
-
-app.listen(process.env.port || port)
-console.log('Web Server is listening at port ' + (process.env.port || port));
+app.use('/', require('./routes/index.js'));
