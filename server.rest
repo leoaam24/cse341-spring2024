@@ -1,5 +1,32 @@
-GET http://localhost:3000/users/662b83b28f54963fe96fb875
+GET http://localhost:3000/users
 
 ###
 
-GET http://cse341-spring2024.onrender.com/users
+GET http://cse341-spring2024.onrender.com/users/
+
+###
+POST http://localhost:3000/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Mark",
+    "lastName": "Gomez",
+    "email":"mark.ad.virtual@gmail.com",
+    "favoriteColor": "Red"
+}
+
+### 
+
+PUT http://localhost:3000/users/662b84588f54963fe96fb876 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Leo Andrew",
+    "lastName": "Mosquera",
+    "email": "testing@justatest.com",
+    "favoriteColor": "Black"
+}
+
+###
+
+DELETE http://localhost:3000/users/6635d6e50a7a4ec8f9db1d3f HTTP/1.1
