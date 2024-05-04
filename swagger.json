@@ -63,6 +63,9 @@
                 },
                 "favoriteColor": {
                   "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
                 }
               }
             }
@@ -123,6 +126,9 @@
                   "example": "any"
                 },
                 "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
                   "example": "any"
                 }
               }
